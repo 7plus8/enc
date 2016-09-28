@@ -1,0 +1,1226 @@
+// ----------- vars --------------//
+$white : #FFFFFF
+$highlight: #55a8ef
+$light_green: #e2fdf6
+$grey_copy: #5e5d5d
+$grey: #677
+$prod_grey: #f8f8f8
+$darker_grey: #ededed
+$green: #63a226
+$red: #fd7473
+$yellow: #fec951
+$blue: #47b8e0
+$purple: #9f68d0
+$admin_bar: #23282d
+$admin_menu_hover: #32373c
+$font-face: "br", "lato", "Open Sans", Helvetica, Arial, Sans-serif //Brandon Grotesque
+// ----------Global style--------//
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+@font-face
+	font-family: 'br'
+	src: url(/app/views/assets/fonts/b_g/Brandon_reg.otf)
+
+body
+	font-family: $font-face
+	line-height: 150%
+	//font-size: .95em
+	-webkit-font-smoothing: antialiased
+	color: $grey_copy
+	background-color: #eee
+
+.wrapper
+	width: 1440px
+	max-width: 80%
+	margin: 0 auto
+.link
+	color: $highlight
+.button
+	border: none
+	outline: none
+	border-radius: 2rem
+	padding: .5rem 2.5rem
+	font-weight: 500
+	color: $white
+	text-decoration: none
+	text-align: center
+	transition: all .2s ease-in-out 0s
+.blue
+	color: $blue
+.red
+	color: $red
+.yellow
+	color: $yellow
+.purple
+	color: $purple
+
+.button_primary
+	background: #0085ba
+	border-color: #0073aa #006799 #006799
+	-webkit-box-shadow: 0 1px 0 #006799
+	-moz-box-shadow: 0 1px 0 #006799
+	box-shadow: 0 1px 0 #006799
+	color: #fff
+	text-decoration: none
+	text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799
+	display: inline-block
+	text-decoration: none
+	font-size: 14px
+	line-height: 26px
+	height: 28px
+	margin: 0
+	padding: 0 10px 1px
+	cursor: pointer
+	border-width: 1px
+	border-style: solid
+	-webkit-appearance: none
+	-webkit-border-radius: 3px
+	border-radius: 3px
+	white-space: nowrap
+
+.fa
+	width: 20px
+
+.button_highlight
+	background: $highlight
+
+.button_secondary
+	background: rgba(250,250,250, .35)
+
+.button_outline
+	border: 2px solid $grey_copy
+	border-radius: 2px
+	color: $grey_copy
+	background: transparent
+	&:hover
+		background: $highlight
+		border-color: $highlight
+		color: $white
+
+.button_small
+	padding: .3rem 1rem
+
+.button_large
+	padding: .7rem 3rem
+	font-size: 1.35rem
+
+.cf:after,
+.cf:before
+	content: " "
+	display: table
+
+.cf:after
+	clear: both
+
+
+input[type=text], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=search], select, textarea
+	border: 1px solid #ddd
+	font-family: inherit
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.07)
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.07)
+	background-color: #fff
+	outline: 0
+	-webkit-transition: 50ms border-color ease-in-out
+	transition: 50ms border-color ease-in-out
+
+input, textarea, keygen, select, button
+	text-rendering: auto
+	letter-spacing: normal
+	word-spacing: normal
+	text-transform: none
+	text-indent: 0px
+	text-shadow: none
+	display: inline-block
+	text-align: start
+	margin: 0em 0em 0em 0em
+	font: 13.3333px
+
+textarea
+	resize: none
+
+.form_field
+	padding: 2px 6px
+	//font-size: 1.2em
+	outline: 0
+	display: block
+	width: 100%
+	margin: 0
+	//&:focus
+	//	border-color: $blue
+
+.required:after
+	content: " "
+	display: inline-block
+	width: .3rem
+	height: .3rem
+	background: $red
+	border-radius: .15rem
+	margin: 0 0 .5rem .25rem
+
+.left
+	float: left
+
+.right
+	float: right
+
+.menu_popup
+	position: relative
+	&:hover
+		background-color: $prod_grey
+		.sub_menu
+			display: block
+			//height: 150px
+	.sub_menu
+		display: none
+		margin: 0
+		padding: 0
+		overflow: hidden
+		//height: 0
+		min-width: 150px
+		position: absolute
+		background-color: $prod_grey
+		top: 100%
+		left: 0
+		//border-radius: 0 0 3px 3px
+		z-index: 1
+		li
+			clear: left
+
+.overlay
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba(20,30,25, .4)
+	display: none
+
+#close
+	text-decoration: none
+	color: $grey_copy
+	font-weight: 500
+
+@-webkit-keyframes pulse
+	0%
+		-webkit-transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(5deg)
+	40%
+		-webkit-transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	60%
+		-webkit-transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	100%
+		-webkit-transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(0deg)
+
+@-moz-keyframes pulse
+	0%
+		-moz-transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(5deg)
+	40%
+		-moz-transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	60%
+		-moz-transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	100%
+		-moz-transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(0deg)
+
+@keyframes pulse
+	0%
+		transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(5deg)
+	40%
+		transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	60%
+		transform: scale(1.02) translate(-50%, 0) perspective(500px) rotateX(5deg)
+	100%
+		transform: scale(1) translate(-50%, 0) perspective(initial) rotateX(0deg)
+
+.dropzone
+	p.title, .p.sub-title, #select
+		display: inline-block
+	.av_sub, #file, .nojs-tbl
+		display: none
+
+.no-js
+	.dropzone
+		.av_sub, #file, .nojs-tbl
+			display: block
+		p.title, p.sub-title, #select
+			display: none
+
+// ---------- Banner ----------//
+#banner
+	background-image: url(/app/views/assets/img/banner_background.jpg)
+	background-repeat: no-repeat
+	background-size: cover
+	header
+		padding: 2rem 0
+	#logo
+		font-weight: 400
+		font-size: 1.35rem
+		float: left
+		margin: 0
+		a
+			color: $white
+			text-decoration: none
+			span
+				font-weight: 600
+
+	nav
+		float: right
+		a
+			color: $white
+			font-weight: 500
+			text-decoration: none
+			margin-left: 2rem
+		.button_secondary:hover
+			background: $highlight
+	.content
+		padding: 6rem 0 10rem 0
+		.title, .sub_title
+			color: $white
+			text-align: center
+		.title
+			font-size: 2.5rem
+			letter-spacing: .15rem
+			margin: 0
+		.sub_title
+			font-weight: 400
+			letter-spacing: .1rem
+			font-size: 1.35rem
+			width: 550px
+			max-width: 100%
+			margin: 1.5rem auto 3rem auto
+			line-height: 1.75
+
+		.button_wrapper
+			text-align: center
+			margin: 3rem 0
+			.button_outline
+				border-color: $white
+				color: $white
+				&:hover
+					background: $highlight
+					border-color: $highlight
+		.see_more
+			width: 24px
+			position: absolute
+			left: 50%
+			transform: translate(-50%, 0)
+			top: 420px
+
+//----------------blog----------------//
+.blog, .blog-article
+	#banner
+		background-image: unset
+		header
+			padding: 1rem 0
+			&:before, &:after
+				content: ' '
+				display: table
+			&:after
+				clear: both
+			#logo
+				span
+					font-weight: 600
+
+			nav
+				float: right
+				a
+					color: $white
+					font-weight: 500
+					text-decoration: none
+					margin-left: 2rem
+	.content
+		display: none
+
+.blog, .blog-article
+	#articles_wrap
+		padding: 4rem 0 5rem
+		.side_nav
+			width: 15%
+			//max-width: 100px
+			float: left
+			h3
+				margin: 0
+				&:after
+					content: " "
+					display: block
+					height: 2px
+					background: $blue
+					margin: .1rem 0 .5rem
+					width: 20px
+			ul
+				margin: 0
+				padding: 0
+				list-style: none
+				width: 100%
+				li
+					margin: .3rem 0
+					a
+						text-decoration: none
+						font-size: 1.1rem
+		.articles_wrapper
+			._article
+				&:last-child
+					//border: none
+				.title
+					margin: 0
+					a
+						color: $grey_copy
+						font-size: 1.3rem
+						text-decoration: none
+						transition: all .2s ease-in-out
+						&:hover
+							color: $blue
+				.metadata
+					margin: 0rem 0 .7rem
+					.dashicons
+						width: 1rem
+						height: 1rem
+						vertical-align: middle
+						font-size: .85rem
+						line-height: unset
+					a
+						color: $grey
+						font-size: .85rem
+						text-decoration: none
+						transition: all .2s ease-in-out
+						&:hover
+							color: $blue
+					span
+						padding: 0 1rem
+						color: $yellow
+						font-size: 1.2rem
+				.text_content
+					a
+						color: $highlight
+						text-decoration: none
+						transition: all .2s ease-in-out
+						&:hover
+							color: $blue
+				.category
+					margin: .5rem 0
+					p
+						margin: 0
+						a
+							color: $grey
+							font-size: .85rem
+							text-decoration: none
+							transition: all .2s ease-in-out
+							&:hover
+								color: $blue
+		.sidebar
+			width: 26%
+			float: right
+			border: 1px solid #e5e5e5
+			box-shadow: 0 1px 1px rgba(0,0,0,.04)
+			background-color: $white
+			.search_box
+				padding: 0 0 1rem
+				.form_field
+					background-color: rgba(250, 255,189, 1)
+					width: 100%
+					padding: .5rem .5rem
+					border: none
+					border-bottom: 1px solid #e5e5e5
+					-webkit-box-sizing: border-box
+					-moz-box-sizing: border-box
+					box-sizing: border-box
+					box-shadow: none
+
+.blog
+	#articles_wrap
+		padding-bottom: 2rem
+	#banner
+		background-color: $blue
+		.button_secondary:hover
+			background: $purple
+	._wrap
+		width: 55%
+		float: left
+		.load_more
+			text-align: center
+			margin: 2rem 0 0
+	.articles_wrapper
+		width: 100%
+		border: 1px solid #e5e5e5
+		border-bottom: none
+		box-shadow: 0 1px 1px rgba(0,0,0,.04)
+		._article
+			background-color: $white
+			border-bottom: 1px solid #e5e5e5
+			//box-shadow: 0 1px 1px rgba(0,0,0,.04)
+			padding: 1rem .7rem
+
+.register, .login
+	#banner
+		display: none
+		.button_secondary:hover
+			background: $blue
+
+.blog-article
+	#banner
+		background-color: $purple
+		.button_secondary:hover
+			background: $blue
+
+	#articles_wrap
+		.articles_wrapper
+			width: 60%
+			float: left
+			.meta
+				position: relative
+			.user_metadata
+				float: left
+				width: 14%
+				max-width: 80px
+				.avatar_wrapper
+					overflow: hidden
+					width: 100%
+					height: 73px
+					border-radius: 3px
+					border: 5px solid #d5d5d5
+					overflow: hidden
+					.avatar
+						vetical-align: bottom
+						width: 100%
+						transition: all .2s ease-in-out
+						&:hover
+							transform: scale(1.05)
+				.name
+					margin: .5rem 0 0
+					font-size: .8rem
+					color: $grey
+			.article_wrapper
+				//padding: 1rem 0 0
+				background-color: $white
+				float: right
+				width: 84%
+				.article
+					background-color: $white
+					border: 1px solid #e5e5e5
+					box-shadow: 0 1px 1px rgba(0,0,0,.04)
+					padding: .2rem .7rem
+					.title
+						margin: 0
+						font-weight: 600
+				.comments_wrapper
+					width: 100%
+					border: 1px solid #e5e5e5
+					border-top: none
+					box-shadow: 0 1px 1px rgba(0,0,0,.04)
+					background-color: rgba(0,0,0,.04)
+					.title
+						margin: 0
+						padding: 1rem .7rem 0rem
+						font-size: 1.2rem
+						font-weight: 500
+						&:after
+							content: " "
+							display: block
+							width: 40px
+							height: 3px
+							background: $grey
+							margin: 7px 0 10px 1.6rem
+						.dashicons
+							vertical-align: middle
+							height: 1.4rem
+							color: $grey
+					.comment_wrapper
+						padding: 1rem .7rem
+						border-bottom: 1px solid #e3e3e3
+						&:last-child
+							border: none
+						.comment-header
+							width: 100%
+							.avatar_wrapper
+								border-radius: 3rem
+								overflow: hidden
+								width: 50px
+								height: 50px
+								float: left
+								.avatar
+									width: 100%
+									vetical-align: bottom
+							.header-content
+								width: 75%
+								float: left
+								margin: 0 0 0 20px
+								.name
+									margin: 0
+								p
+									margin: 0
+									color: $grey
+									font-size: .8rem
+					.comment
+						padding: 1rem 0
+					.reply
+						margin: 0 0 .5rem
+					.reply-form
+						height: 0
+						overflow: hidden
+						form
+							border: 1px solid #e5e5e5
+							box-shadow: 0 1px 1px rgba(0,0,0,.04) inset
+							background-color: $white
+							padding: .2rem .7rem .7rem
+							label
+								font-size: .8rem
+							.form_field
+								margin: .5rem 0
+								font-size: .9rem
+
+				.form_wrapper
+					background-color: rgba(0,0,0,.04)
+					padding: 1rem .7rem
+					border: 1px solid #e5e5e5
+					box-shadow: 0 1px 1px rgba(0,0,0,.04)
+					textarea, input
+						margin: .5rem 0
+
+
+
+		.sidebar
+			width: 23%
+
+
+
+// ---------------services---------------//
+#services
+	background: $light_green
+	padding: 2rem 0 6.5rem 0
+	position: relative
+	.service
+		background: $white
+		width: 31%
+		float: left
+		margin: -5rem 1% 0 1%
+		padding: 1.5rem 2.5%
+		position: relative
+		border-radius: 4px
+		-webkit-box-shadow: 0 0 57px 0 rgba(4, 6, 9, .25)
+		-moz-box-shadow: 0 0 57px 0 rgba(4, 6, 9, .25)
+		box-shadow: 0 0 57px 0 rgba(4, 6, 9, .25)
+		h3
+			margin: 0
+			font-size: 1.4rem
+			color: $grey_copy
+			&:after
+				content: " "
+				display: block
+				width: 40px
+				height: 3px
+				background: $highlight
+				margin: 7px 0 10px
+		p
+			margin: 0 0 2rem
+			color: $grey_copy
+		&:after
+			content: " "
+			position: absolute
+			left: 50%
+			bottom: -50px
+			height: 50px
+			border-left: 2px solid $darker_grey
+	.middle
+		&:after
+			bottom: -105px
+			height: 105px
+	&:before
+		content: " "
+		position: absolute
+		left: 50%
+		transform: translate(-50.6%, 0)
+		width: 53%
+		bottom: 54px
+		border-top: 2px solid $darker_grey
+
+// ---------------Products------------------//
+#products
+	background-image: url(/app/views/assets/img/prod_background.jpg)
+	background-repeat: no-repeat
+	background-size: cover
+	background-attachment: fixed
+	.bg_overlay
+		padding: 5rem 0 25rem 0
+		position: relative
+		overflow: hidden
+		background: rgba(200, 90, 252, .5)
+		text-align: center
+		.title
+			font-size: 2rem
+			color: $white
+			font-weight: 500
+			margin: 0 0 .75rem 0
+		.sub_title
+			width: 620px
+			max-width: 100%
+			color: $white
+			margin: 0 auto
+			font-size: 1.25rem
+
+//-----------------Testimonials--------------//
+#testimonials
+	background: $green
+	padding: 2rem 0 3rem
+	.testimonials
+		width: 550px
+		max-width: 100%
+		margin: 0 auto
+		h2
+			font-weight: 500
+			font-size: 2rem
+			text-align: center
+			color: $white
+			margin-top: 0
+		.tes
+			width: 100%
+			//margin: 1.5rem 0
+			.avatar_wrap
+				float: left
+				width: 73px
+				height: 73px
+				border-radius: 50%
+				overflow: hidden
+				.avatar
+					vertical-align: bottom
+			.text_wrap
+				width: auto
+				max-width: 70%
+				float: right
+				margin: 1rem  7% 0 0
+				.text
+					background: rgba(250, 250, 255, .7)
+					padding: 1rem 3%
+					border-radius: 1.5rem
+					border-top-left-radius: 0
+					p
+						margin: 0
+						color: $grey_copy
+
+
+#blog
+	background: $darker_grey
+	padding: 2rem 0
+	.carousel
+		width: 100%
+		#slides
+			overflow: hidden
+			position: relative
+			ul
+				list-style: none
+				position: relative
+				left: 0
+				padding: 0
+				margin: 0
+				width: 3000px
+				li
+					width: 332.5px
+					max-width: 100%
+					float: left
+					margin: 1% .9% 1% 0
+					border: 1px solid #ddd
+					border-radius: 2rem
+					overflow: hidden
+					transition: all .2s ease-in-out 0s
+					&:hover
+						box-shadow: 0 2px 10px 0 rgba(0,0,0,.05)
+					.item
+						width: 100%
+						background: $white
+						color: $grey_copy
+						.featured_image
+							//height: 332.5px
+							max-awidth: 100%
+							border-radius: 2rem 2rem 0 0
+							overflow: hidden
+							.featured
+								width: 100%
+								-webkit-transition: all .2s ease-in-out 0s
+								-moz-transition: all .2s ease-in-out 0s
+								-o-transition: all .2s ease-in-out 0s
+								transition: all .2s ease-in-out 0s
+								&:hover
+									transform: scale(1.075)
+									cursor: pointer
+						.article
+							padding: 1rem 5%
+							.title
+								font-size: 1.2rem
+								font-weight: 600
+								margin: 0
+								a
+									text-decoration: none
+									color: inherit
+									transition: color .2s ease-in-out 0s
+								a:hover
+									color: $highlight
+							.date_time
+								margin: 0
+								color: #888
+								font-size: .7rem
+								font-style: italic
+							.content
+								font-size: .9rem
+								margin: 1rem 0
+
+
+		.buttons
+			text-align: center
+			a#prev, a#next
+				text-decoration: none
+				display: inline-block
+				outline: none
+				border: none
+				color: $highlight
+				background-color: $white
+				width: 50px
+				height: 50px
+				padding: .5rem
+				border-radius: 4px
+				overflow: hidden
+				border: 1px solid #ddd
+				transition: all .2s ease-in-out 0s
+			#prev
+				background-image: url(/app/views/assets/img/arrows.png)
+				background-repeat: no-repeat
+				background-position: 16px 12px
+			#prev:hover
+				background-color: $green
+				background-position: -25px 12px
+			#next
+				background-image: url(/app/views/assets/img/arrows.png)
+				background-repeat: no-repeat
+				background-position: -106px 12px
+			#next:hover
+				background-color: $green
+				background-position: -67px 12px
+
+
+@media only screen and (max-width: 1280px)
+	#blog
+		.carousel
+			#slides
+				ul
+					li
+						width: 323px
+						max-width: 100%
+						margin: 1% .4% 1% 0
+						.item
+							.featured_image
+								height: 323.5px
+								max-height: 100%
+
+
+
+//-----------------Final COA----------------//
+#contact
+	background: $light_green
+	padding: 3rem 0 5rem
+	text-align: center
+	.title
+		font-size: 2.5rem
+		color: $grey_copy
+	.sub_title
+		font-size: 1.5rem
+		color: $grey_copy
+		width: 600px
+		max-width: 100%
+		display: block
+		margin: 0 auto 4rem auto
+
+footer
+	padding: 1rem 0
+	background-color: $white
+	.copyright
+		text-align: center
+		font-weight: 600
+		color: $grey_copy
+		a
+			color: $highlight
+			text-decoration: none
+
+
+//////////////////ADMIN\\\\\\\\\\\\\\\\\\\\\
+
+
+.admin_nav
+	background-color: $admin_bar
+	padding: 0
+	height: 36px
+	//overflow: hidden
+	.right
+		.menu_popup
+			img
+				width: 28px
+				vertical-align: middle
+				margin-bottom: 4px
+				border-radius: 3rem
+			.sub_menu
+				right: 0
+				left: unset
+	ul
+		margin: 0
+		padding: 0
+		list-style: none
+		li
+			float: left
+			height: 36px
+			transition: all .2s ease-in-out
+			&:hover
+				background-color: $admin_menu_hover
+				a
+					color: $blue
+			a
+				color: #ccc
+				text-decoration: none
+				padding: 0 1rem
+				line-height: 36px
+				transition: all .2s ease-in-out
+		.menu_popup
+			.sub_menu
+				background-color: $admin_menu_hover
+				li
+					a
+						color: #ccc
+						&:hover
+							color: $blue
+
+
+////////////////////Avatar\\\\\\\\\\\\\\\\\\
+
+#avatar
+	padding: 3rem 0 5rem
+	.wrapper
+		.dropzone
+			border: 5px dashed #ccc
+			//width: 400px
+			max-width: 100%
+			border-radius: 15px
+			margin: 0 auto
+			padding: 2rem 2rem 3rem
+			text-align: center
+			transition: all .2s ease-in-out
+			.title
+				font-size: 1.5rem
+				font-weight: 500
+				margin: 0
+			.sub-title
+				margin: 0 0 15px
+		.dragover
+			border-color: #999
+
+
+
+
+
+
+#profile
+	position: relative
+	padding: 0 0 5rem
+	.profile_editor
+		width: 598px
+		max-width: 100%
+		background: $white
+		margin: 0 auto
+		border: 1px solid #e5e5e5
+		box-shadow: 0 1px 1px rgba(0,0,0,.04)
+		form
+			padding: 10px 15px
+		.header
+			padding: 5px 15px
+			background-image: linear-gradient(to bottom, #fff, #fff 50%, #f5f5f5 100%)
+			border-bottom: 1px solid #e5e5e5
+			.title
+				margin: 0
+				font-size: 1rem
+	table
+		width: 100%
+		tr
+			td
+				padding: .4rem 0
+				.form_field
+					margin: 0
+				a
+					text-decoration: none
+					color: $highlight
+				.avatar_wrapper
+					width: 100px
+					height: 100px
+					border-radius: 3px
+					overflow: hidden
+					img
+						width: 100%
+						vertical-align: baseline
+	.change_password
+		width: 500px
+		max-width: 90%
+		background: $white
+		position: absolute
+		top: 20%
+		left: 50%
+
+		-webkit-transform: scale(1) translate(-50%, 0)
+		-moz-transform: scale(1) translate(-50%, 0)
+		transform: scale(1) translate(-50%, 0)
+
+		-webkit-transform: scale(0.99) translate(-50%, 0) perspective(initial) rotateX(0deg)
+		-moz-transform: scale(0.99) translate(-50%, 0) perspective(initial) rotateX(0deg)
+		transform: scale(0.99) translate(-50%, 0) perspective(initial) rotateX(0deg)
+
+		box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0,0,0,0.15)
+		border: 1px solid #ddd
+		border-radius: 3px
+		z-index: 1
+
+		-webkit-animation-duration: 300ms
+		-moz-animation-duration: 300ms
+		animation-duration: 300ms
+
+		-webkit-animation-iteration-count: 1
+		-moz-animation-iteration-count: 1
+		animation-iteration-count: 1
+
+		-webkit-animation-name: pulse
+		-moz-animation-name: pulse
+		animation-name: pulse
+
+		-webkit-animation-timing-function: ease-in-out
+		-moz-animation-timing-function: ease-in-out
+		animation-timing-function: ease-in-out
+		display: none
+		form
+			padding: 10px 15px
+		.header
+			padding: 5px 15px
+			background-image: linear-gradient(to bottom, #fff, #fff 50%, #f5f5f5 100%)
+			border-bottom: 1px solid #e5e5e5
+			#close
+				color: #777
+				&:hover
+					color: #grey_copy
+			.title
+				margin: 0
+				font-size: 1rem
+
+.login, .register
+	#login, #register
+		padding: 5rem 0 8rem
+		.frm_wrapper
+			width: 350px
+			max-width: 100%
+			margin: 0 auto
+			background-color: $white
+			border: 1px solid #e5e5e5
+			box-shadow: 0 1px 1px rgba(0,0,0,.04)
+			.header
+				color: $grey_copy
+				padding: 5px 15px
+				padding-bottom: 10px
+				margin-bottom: 10px
+				border-bottom: 1px solid #e5e5e5
+				//background-image: linear-gradient(to bottom, #fff, #fff 50%, #f9f9f9 100%)
+				.title
+					font-size: 1em
+					line-height: 1.4
+					margin: 0
+			form
+				padding: 15px
+				input[type=text], input[type=password], input[type=email]
+					margin: 0  0 1rem
+				label
+					color: #82878c
+
+
+/////////////////DASHBOARD\\\\\\\\\\\\\\\\\\\\\\\
+#dashboard
+	padding: 2rem 0 3rem
+	.wrapper
+		.dashbox
+			width: 48%
+			float: left
+			max-width: 100%
+			margin: 0 10px 0 0
+			.widget
+				min-width: 255px
+				max-width: 90%
+				margin: 0 0 10px
+				border: 1px solid #e5e5e5
+				box-shadow: 0 1px 1px rgba(0,0,0,.04)
+				background: #fff
+				.all
+					border-top: 1px solid #eee
+				.header
+					color: $grey_copy
+					padding: 5px 10px
+					border-bottom: 1px solid #eee
+					background-image: linear-gradient(to bottom, #fff, #fff 50%, #f9f9f9 100%)
+					p
+						margin: 0
+					.title
+						font-size: 1em
+						line-height: 1.4
+						margin: 0
+				.body
+					padding: 10px 10px
+					input, textarea
+						margin-bottom: 10px
+					p
+						margin-top: 0
+					ul
+						margin: 0
+						padding: 0
+						list-style: none
+						display: inline-block
+						width: 100%
+						li
+							width: 50%
+							margin-bottom: 10px
+							float: left
+							i
+								color: #82878c
+								width: 20px
+								height: 20px
+							a
+								text-decoration: none
+								color: #0073aa
+						.activity-posts
+							width: 100%
+							span
+								display: inline-block
+								margin-right: 5px
+								min-width: 180px
+								color: #777
+								font-size: 13px
+
+#admin-top-menu
+	padding: 3rem 0
+	.wrapper
+		.dash-menu
+			margin: 0 auto
+			padding: 0
+			list-style: none
+			width: 618px
+			max-width: 100%
+			li
+				display: inline-table
+				a
+					text-decoration: none
+					color: $grey_copy
+					font-size: 1.2rem
+					font-weight: 600
+					padding: .5rem 1rem
+					&:hover
+						color: $blue
+
+///////////////////////////user profile\\\\\\\\\\\\\\\\\\\\\\
+
+#user_profile
+	padding: 0 0 5rem
+	.wrapper
+		width: 1440px
+		max-width: 70%
+		.info_bar
+			width: 33%
+			//max-width: 100%
+			background-color: $white
+			border: 1px solid #e5e5e5
+			box-shadow: 0 1px 1px rgba(0,0,0,.04)
+			.details
+				padding: 10px
+				.user_inf
+					margin: 0 0 10px
+					.avatar_wrapper
+						width: 73px
+						height: 73px
+						border-radius: 3px
+						overflow: hidden
+						.avatar
+							width: 73px
+							height: 73px
+							vertical-align: baseline
+					.inf_wrapper
+						padding: 0 0 0 10px
+						.name
+							margin: 0
+							font-size: 1.5rem
+							font-weight: 500
+						.username
+							margin: 0
+							font-size: 1rem
+							font-weight: 400
+							color: #777
+				table
+					margin: 0 0 10px
+					td
+						padding: 5px 10px 5px 0
+						a
+							color: $highlight
+					.mono
+						font-family: monospace
+						font-size: 115%
+			.title
+				margin: 0
+				font-size: 1.1rem
+				font-weight: 500
+			.inf
+				color: #777
+				margin: 0
+			.bio_wrap
+				padding: 10px 10px 15px
+				border-top: 1px solid #e5e5e5
+				background-color: rgba(0,0,0,.04)
+				box-shadow: 0 1px 1px rgba(0,0,0,.04) inset
+				.bio
+					line-height: 130%
+		.activity
+			width: 65%
+			max-width: 100%
+			background-color: $white
+			border: 1px solid #e5e5e5
+			box-shadow: 0 1px 1px rgba(0,0,0,.04)
+			.header
+				color: $grey_copy
+				padding: 5px 10px
+				border-bottom: 1px solid #e5e5e5
+				//background-image: linear-gradient(to bottom, #fff, #fff 50%, #f9f9f9 100%)
+				.title
+					margin: 0
+					font-size: 1.2rem
+					font-weight: 500
+			.content
+				padding: 10px
+
+//////////////////////////Article Editor\\\\\\\\\\\\\\\\\\\\\\
+
+.article_editor
+	width: 550px
+	max-width: 100%
+	h2
+		margin-top: 0
+		margin-bottom: 10px
+		font-size: 1.3rem
+	.form_field
+		margin-bottom: 15px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////eeeeeeeeeeeeeeexxxxxxxxxxxxxxxxtttttttttttra/////////
+
+.mce-tooltip-inner
+	font-size: 12px
+	border-radius: 4px
+	background-color: #222
+	color: white
+	max-width: 200px
+	padding: 10px 10px 8px 10px
